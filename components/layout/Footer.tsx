@@ -13,12 +13,12 @@ const footerData = {
             "We Believe Every Sweet Moment Deserves A Little Extra Magic. Born From A Love For Thoughtful Gifting And Beautifully Crafted Treats, We Bring Together Delightful Flavours, Quality Ingredients, And Elegant Packaging To Make Every Occasion Memorable.",
     },
     quickLinks: [
-        { label: "Home", href: "/" },
-        { label: "Our Story", href: "#" },
-        { label: "Shop", href: "#" },
-        { label: "Gifting", href: "#" },
+        { label: "Home", href: "/#home" },
+        { label: "Our Story", href: "/#our-story" },
+        { label: "Shop", href: "/#shop" },
+        { label: "Gifting", href: "/#gifting" },
         { label: "Blogs", href: "#" },
-        { label: "Contact Us", href: "#" },
+        { label: "Contact Us", href: "/#contact" },
     ],
     socialLinks: [
         { label: "Facebook", href: "#", icon: Icons.Facebook },
@@ -50,7 +50,7 @@ function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-y-[30px] lg:gap-y-0 md:gap-x-[30px] xl:gap-x-[48px] items-start">
                         {/* Brand Info */}
                         <div className="md:col-span-2 lg:col-span-5 flex flex-col gap-[16px]">
-                            <Link href="/" aria-label="Navigate to Meltique Home" title="Navigate to Home" className="block w-[140px] md:w-[180px] 2xl:w-[200px]">
+                            <Link href="/#home" aria-label="Navigate to Meltique Home" title="Navigate to Home" className="block w-[180px] md:w-[200px] 2xl:w-[200px]">
                                 <Image
                                     src={footerData.branding.logoSrc}
                                     alt={footerData.branding.logoAlt}

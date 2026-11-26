@@ -20,19 +20,19 @@ const headerData = {
     navItems: [
         {
             label: "Home",
-            href: "/",
+            href: "/#home",
         },
         {
             label: "Our Story",
-            href: "#",
+            href: "/#our-story",
         },
         {
             label: "Shop",
-            href: "#",
+            href: "/#shop",
         },
         {
             label: "Gifting",
-            href: "#",
+            href: "/#gifting",
         },
     ],
     ctaButton: {
@@ -59,7 +59,7 @@ function Header() {
                             type: "tween",
                         }}
                         className="flex items-center justify-start xl:flex-1">
-                        <Link href="/" aria-label="Navigate to Meltique Gift Collections Home" title="Navigate to Home" className="logo w-[110px] md:w-[130px] 2xl:w-[150px]">
+                        <Link href="/#home" aria-label="Navigate to Meltique Gift Collections Home" title="Navigate to Home" className="logo w-[110px] md:w-[130px] 2xl:w-[150px]">
                             <Image
                                 src={headerData.branding.logoSrc}
                                 alt={headerData.branding.logoAlt}
@@ -77,7 +77,7 @@ function Header() {
                     <div className="hidden xl:flex items-center justify-center">
                         <ul className="relative font-normal flex flex-col p-4 md:p-0 mt-4 md:flex-row md:items-center md:justify-center md:space-x-2 rtl:space-x-reverse md:mt-0">
                             {headerData.navItems?.map((link, index) => {
-                                const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(`${link.href}/`));
+                                const isActive = link.href === '/#home' ? pathname === '/' : pathname === link.href;
                                 return (
                                     <motion.li
                                         initial={{ x: 20, opacity: 0 }}
@@ -120,7 +120,7 @@ function Header() {
                                 type: "tween",
                             }}
                             className="md:block hidden">
-                            <MainBtn BtnArrow text="Let's Connect" url="/" btnType="outline" />
+                            <MainBtn BtnArrow text="Let's Connect" url="/#contact" btnType="outline" />
                         </motion.div>
 
                         <button

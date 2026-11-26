@@ -8,7 +8,7 @@ import { motion } from 'motion/react'
 
 export default function ProductSection() {
     return (
-        <div className='main-padding y-gap'>
+        <div id='shop' className='main-padding y-gap'>
             <div className="top-section grid grid-cols-1 lg:grid-cols-2 gap-[16px] md:gap-[24px] lg:gap-[40px] items-start">
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}

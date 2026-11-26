@@ -34,7 +34,7 @@ function MobileMenu({ closeMenu, navLinks }: { closeMenu: () => void; navLinks: 
                 <div className="w-full">
                     <ul className="relative font-normal flex flex-col gap-[25px]">
                         {navLinks?.map((link, index) => {
-                            const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(`${link.href}/`));
+                            const isActive = link.href === '/#home' ? pathname === '/' : pathname === link.href;
                             return (
                                 <motion.li
                                     key={index}
@@ -68,7 +68,7 @@ function MobileMenu({ closeMenu, navLinks }: { closeMenu: () => void; navLinks: 
                         className="mt-6 block md:hidden"
                     >
                         <div className="md:hidden block">
-                            <MainBtn text="Let's Talk" url="/" btnType="outline" />
+                            <MainBtn text="Let's Talk" url="/#contact" btnType="outline" />
                         </div>
                     </motion.div>
                 </div>

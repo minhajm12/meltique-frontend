@@ -8,7 +8,7 @@ import { motion } from 'motion/react'
 
 export default function HomeBanner() {
     return (
-        <div className='full-padding'>
+        <div id='home' className='full-padding'>
             <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-[30px] lg:gap-[40px] relative lg:h-[calc(100vh_-_120px)] lg:min-h-[560px] rounded-[20px] md:rounded-[30px] overflow-hidden px-[20px] sm:px-[35px] md:px-[50px] lg:px-[60px] 2xl:px-[120px] py-[40px] md:py-[60px] lg:py-0'>
                 <motion.div
                     initial={{ opacity: 0, scale: 1.05 }}
@@ -79,7 +79,7 @@ export default function HomeBanner() {
                                 type: "tween",
                             }}
                         >
-                            <MainBtn iconDisable BtnArrow btnType='outline' text={'Explore Collection'} url={''} />
+                            <MainBtn iconDisable BtnArrow btnType='outline' text={'Explore Collection'} url={'/#shop'} />
                         </motion.div>
                         <motion.div
                             initial={{ x: -20, opacity: 0 }}
@@ -90,7 +90,7 @@ export default function HomeBanner() {
                                 type: "tween",
                             }}
                         >
-                            <MainBtn iconDisable BtnArrow btnType='fillGrade' text={'Explore Collection'} url={''} />
+                            <MainBtn iconDisable BtnArrow btnType='fillGrade' text={'Explore Collection'} url={'/#shop'} />
                         </motion.div>
                     </div>
                 </div>

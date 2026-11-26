@@ -9,6 +9,7 @@ import { Icons } from './Icons'
 import { motion } from 'motion/react'
 
 type MainCtaProps = {
+    id?: string;
     title?: string;
     title2?: string;
     offer?: string;
@@ -20,13 +21,14 @@ type MainCtaProps = {
 };
 
 function MainCta({
+    id = "gifting",
     title = "Make Gifting",
     title2 = "Sweeter.",
     offer = "15% OFF",
     couponCode = "SWEET15",
     description = "On your first gifting order. Because every celebration deserves something sweet.",
     btnText = "Explore Now",
-    btnUrl = "#",
+    btnUrl = "/#shop",
     bgImage = "/assets/img/cta-bg.jpg",
 }: MainCtaProps) {
     const [copied, setCopied] = useState(false);
@@ -42,7 +44,7 @@ function MainCta({
     };
 
     return (
-        <section className="relative w-full overflow-hidden bg-black main-padding py-[40px] md:py-[60px] lg:py-[80px] 2xl:py-[90px]">
+        <section id={id} className="relative w-full overflow-hidden bg-black main-padding py-[40px] md:py-[60px] lg:py-[80px] 2xl:py-[90px]">
             <motion.div
                 initial={{ opacity: 0, scale: 1.04 }}
                 whileInView={{ opacity: 1, scale: 1 }}
