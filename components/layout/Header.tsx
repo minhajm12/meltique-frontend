@@ -7,8 +7,9 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import MainBtn from "../common/MainBtn";
 import { Icons } from "../common/Icons";
-import MobileMenu from "../common/MobileMenu copy";
+import MobileMenu from "../common/MobileMenu";
 import { Sheet, SheetContent } from "../ui/sheet";
+import { motion } from "motion/react";
 
 const headerData = {
     branding: {
@@ -49,7 +50,15 @@ function Header() {
             <nav className="">
                 <div className="w-full flex items-center justify-between">
                     {/* Menu Button & Logo */}
-                    <div className="flex items-center justify-start xl:flex-1">
+                    <motion.div
+                        initial={{ x: 20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{
+                            delay: 0,
+                            duration: 0.5,
+                            type: "tween",
+                        }}
+                        className="flex items-center justify-start xl:flex-1">
                         <Link href="/" aria-label="Navigate to Meltique Gift Collections Home" title="Navigate to Home" className="logo w-[110px] md:w-[130px] 2xl:w-[150px]">
                             <Image
                                 src={headerData.branding.logoSrc}
@@ -62,7 +71,7 @@ function Header() {
                                 style={{ width: "auto", height: "auto" }}
                             />
                         </Link>
-                    </div>
+                    </motion.div>
 
                     {/* Desktop Nav Links */}
                     <div className="hidden xl:flex items-center justify-center">
@@ -70,7 +79,14 @@ function Header() {
                             {headerData.navItems?.map((link, index) => {
                                 const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(`${link.href}/`));
                                 return (
-                                    <li
+                                    <motion.li
+                                        initial={{ x: 20, opacity: 0 }}
+                                        animate={{ x: 0, opacity: 1 }}
+                                        transition={{
+                                            delay: index * 0.1,
+                                            duration: 0.5,
+                                            type: "tween",
+                                        }}
                                         key={index}>
                                         <Link
                                             href={link.href}
@@ -86,7 +102,7 @@ function Header() {
                                                 : ""
                                                 }`}>{link.label}</span>
                                         </Link>
-                                    </li>
+                                    </motion.li>
                                 );
                             })}
                         </ul>
@@ -95,9 +111,17 @@ function Header() {
                     <div className="flex items-center justify-end gap-5 xl:flex-1">
 
 
-                        <div className="md:block hidden">
+                        <motion.div
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                delay: 0,
+                                duration: 0.5,
+                                type: "tween",
+                            }}
+                            className="md:block hidden">
                             <MainBtn BtnArrow text="Let's Connect" url="/" btnType="outline" />
-                        </div>
+                        </motion.div>
 
                         <button
                             onClick={() => setMenuOpen(true)}

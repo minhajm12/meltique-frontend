@@ -43,7 +43,7 @@ function MobileMenu({ closeMenu, navLinks }: any) {
                     {/* Buttons */}
                     <div onClick={closeMenu} className="mt-6 block md:hidden">
                         <div className="md:hidden block">
-                            <MainBtn text="Sign In" url="/login" btnType="outline" />
+                            <MainBtn text="Let's Talk" url="/" btnType="outline" />
                         </div>
                     </div>
                 </div>

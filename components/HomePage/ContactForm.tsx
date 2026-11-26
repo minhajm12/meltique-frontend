@@ -70,7 +70,7 @@ function ContactForm() {
                     </label>
                     <input
                         id="contact-phone"
-                        type="tel"
+                        type="number"
                         name="phone"
                         required
                         value={formData.phone}
