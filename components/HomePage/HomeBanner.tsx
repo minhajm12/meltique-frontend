@@ -36,7 +36,7 @@ export default function HomeBanner() {
                                 }}
                                 className="text-[24px] md:text-[28px] lg:text-[36px] xl:text-[45px] 2xl:text-[50px] font-light leading-tight tracking-normal"
                             >
-                                Make Every Moment
+                                Make <span className="text-linear-gradient">Every Moment</span>
                             </motion.span>
                             <motion.span
                                 initial={{ y: 20, opacity: 0 }}

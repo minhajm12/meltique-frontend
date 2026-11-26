@@ -163,6 +163,14 @@ input[type="number"]::-webkit-inner-spin-button {
   transition: all .3s ease-in-out;
 }
 
+.text-linear-gradient {
+  background: linear-gradient(to right, var(--gradeColor1), var(--gradeColor2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 /* RESPONSIVE CONTROLL */
 @media (max-width: 1536px) {
   :root {
