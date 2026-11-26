@@ -1,6 +1,9 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import { Icons } from "../common/Icons";
+import { motion } from "motion/react";
 
 const footerData = {
     branding: {
@@ -36,7 +39,13 @@ function Footer() {
     return (
         <footer className="full-padding pb-[20px] md:pb-[30px] pt-[20px]">
             {/* Main Rounded Card */}
-            <div className="bg-white rounded-[20px] md:rounded-[30px] overflow-hidden relative">
+            <motion.div
+                initial={{ y: 24, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ delay: 0, duration: 0.55, type: "tween" }}
+                className="bg-white rounded-[20px] md:rounded-[30px] overflow-hidden relative"
+            >
                 <div className="px-[20px] md:px-[30px] lg:px-[40px] xl:px-[60px] 2xl:px-[80px] pt-[30px] md:pt-[50px] 2xl:pt-[60px] pb-0">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-y-[30px] lg:gap-y-0 md:gap-x-[30px] xl:gap-x-[48px] items-start">
                         {/* Brand Info */}
@@ -148,14 +157,20 @@ function Footer() {
                         className="w-full h-full object-cover object-top pointer-events-none select-none"
                     />
                 </div>
-            </div>
+            </motion.div>
 
             {/* Bottom Copyright Bar */}
-            <div className="mt-[14px] md:mt-[18px] bg-black text-white rounded-full py-[12px] md:py-[14px] px-[24px] text-center">
+            <motion.div
+                initial={{ y: 16, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ delay: 0.15, duration: 0.5, type: "tween" }}
+                className="mt-[14px] md:mt-[18px] bg-black text-white rounded-full py-[12px] md:py-[14px] px-[24px] text-center"
+            >
                 <p className="2xl:text-[18px] text-[16px] font-normal text-white">
                     {footerData.copyright}
                 </p>
-            </div>
+            </motion.div>
         </footer>
     );
 }

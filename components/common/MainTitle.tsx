@@ -8,8 +8,8 @@ function MainTitle({ subtitle, title, title2, description, h2ClassName, contentC
                     <span className="font-sora font-medium text-[16px] lg:text-[18px]">{subtitle}</span>
                 }
                 <h2 className={`flex flex-col gap-0 items-start ${h2ClassName}`}>
-                    <span className={`text-[24px] md:text-[28px] lg:text-[36px] xl:text-[45px] 2xl:text-[50px] font-light leading-tight tracking-normal`}>{title}</span>
-                    <span className={`text-[24px] md:text-[28px] lg:text-[36px] xl:text-[45px] 2xl:text-[50px] font-bold leading-tight tracking-normal`}>{title2}</span>
+                    <span className={`text-[24px] md:text-[28px] lg:text-[36px] xl:text-[40px] 2xl:text-[50px] font-light leading-tight tracking-normal`}>{title}</span>
+                    <span className={`text-[24px] md:text-[28px] lg:text-[36px] xl:text-[40px] 2xl:text-[50px] font-bold leading-tight tracking-normal`}>{title2}</span>
                 </h2>
             </div>
             {description && (

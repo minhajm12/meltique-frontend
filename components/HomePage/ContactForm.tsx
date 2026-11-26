@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { motion } from 'motion/react'
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -31,7 +32,13 @@ function ContactForm() {
     };
 
     return (
-        <div className="bg-white rounded-[20px] md:rounded-[30px] shadow-custom-shadow p-[20px] sm:p-[28px] lg:p-[36px] 2xl:p-[42px] w-full">
+        <motion.div
+            initial={{ y: 24, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ delay: 0.15, duration: 0.55, type: "tween" }}
+            className="bg-white rounded-[20px] md:rounded-[30px] shadow-custom-shadow p-[20px] sm:p-[28px] lg:p-[36px] 2xl:p-[42px] w-full"
+        >
             <div className="mb-[20px] md:mb-[24px]">
                 <h3 className="font-sora font-semibold lg:text-[24px] text-[20px] 2xl:text-[28px] text-black leading-tight">
                     Let’s Talk
@@ -124,14 +131,15 @@ function ContactForm() {
                     </p>
                 )}
 
-                <button
+                <motion.button
                     type="submit"
+                    whileTap={{ scale: 0.99 }}
                     className="mt-[4px] w-full bg-black hover:bg-[#171717] text-white font-poppins font-medium 2xl:text-[18px] text-[16px] py-[12px] md:py-[14px] rounded-full common-transition cursor-pointer"
                 >
                     Submit
-                </button>
+                </motion.button>
             </form>
-        </div>
+        </motion.div>
     )
 }
 
