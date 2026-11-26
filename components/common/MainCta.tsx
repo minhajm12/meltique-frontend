@@ -52,7 +52,7 @@ function MainCta({
                 transition={{ delay: 0, duration: 0.7, type: "tween" }}
                 className="img-div absolute inset-0 w-full h-full"
             >
-                <span className='absolute left-0 top-0 w-full h-full z-1 bg-black/60'></span>
+                <span className='absolute left-0 top-0 w-full h-full z-1 bg-black/60 lg:hidden block'></span>
                 <Image
                     src={bgImage}
                     alt="Meltique festive sweet gifting offer background"
